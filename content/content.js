@@ -135,6 +135,29 @@ function closeModal() {
   if (dismissBtn) dismissBtn.click();
 }
 
+function getCompanyWebsite() {
+  // Look for external links near the company/top-card area on the main profile page
+  const candidates = Array.from(document.querySelectorAll('a[href]'));
+  for (const a of candidates) {
+    const href = a.href;
+    if (
+      href &&
+      !href.includes('linkedin.com') &&
+      !href.startsWith('javascript:') &&
+      !href.startsWith('tel:') &&
+      !href.startsWith('mailto:') &&
+      /^https?:\/\//.test(href)
+    ) {
+      // Only pick links that are inside the top card or experience sections
+      const inTopCard = a.closest(
+        '.pv-top-card, .ph5, [class*="top-card"], [class*="experience-section"], [class*="artdeco-card"]'
+      );
+      if (inTopCard) return href;
+    }
+  }
+  return null;
+}
+
 async function scrapeProfile() {
   const result = {
     name: queryFirst(SELECTORS.name),
@@ -142,6 +165,7 @@ async function scrapeProfile() {
     location: queryFirst(SELECTORS.location),
     company: queryFirst(SELECTORS.company),
     profileUrl: getProfileLinkedInUrl(),
+    companyWebsite: getCompanyWebsite(),
     email: null,
     phone: null,
     websites: [],

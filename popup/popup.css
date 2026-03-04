@@ -147,6 +147,115 @@ code {
   text-decoration: underline;
 }
 
+/* Email suggestions */
+.email-suggestions {
+  border-top: 1px solid #e3e8ed;
+  margin-bottom: 14px;
+  padding-top: 12px;
+}
+
+.suggestions-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.suggestions-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.suggestions-note {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.suggestions-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #777;
+  padding: 4px 0 8px;
+}
+
+.spinner-small {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #d0d8e0;
+  border-top-color: #0a66c2;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.suggestion-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f3f5;
+  gap: 6px;
+}
+
+.suggestion-row:last-child {
+  border-bottom: none;
+}
+
+.suggestion-email {
+  font-size: 12px;
+  color: #1d1d1f;
+  font-family: monospace;
+  word-break: break-all;
+  flex: 1;
+}
+
+.suggestion-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.badge-likely {
+  font-size: 10px;
+  font-weight: 700;
+  color: #057642;
+  background: #e8f5ee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.btn-copy-small {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0a66c2;
+  background: none;
+  border: 1px solid #0a66c2;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn-copy-small:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.suggestions-empty {
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+  padding: 4px 0;
+}
+
 /* Actions */
 .actions {
   display: flex;

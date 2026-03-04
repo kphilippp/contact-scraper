@@ -54,6 +54,21 @@
       <div class="fields" id="fields-container">
         <!-- Populated by popup.js -->
       </div>
+
+      <!-- Email suggestions (shown when no email found on profile) -->
+      <div id="email-suggestions" class="email-suggestions hidden">
+        <div class="suggestions-header">
+          <span class="suggestions-title">Email Guesses</span>
+          <span class="suggestions-note">No email on profile · inferred from name + company</span>
+        </div>
+        <div id="suggestions-loading" class="suggestions-loading hidden">
+          <div class="spinner-small"></div>
+          <span>Checking domain…</span>
+        </div>
+        <div id="suggestions-list"></div>
+        <p id="suggestions-no-result" class="suggestions-empty hidden"></p>
+      </div>
+
       <div class="actions">
         <button id="btn-copy" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
